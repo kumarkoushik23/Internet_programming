@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Flower Delivery</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 400px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        input,
+        select {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 16px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #4caf50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <form id="flowerForm" action="submit_order.php" method="post">
+        <h2>Online Flower Delivery</h2>
+
+        <label for="recipientName">Recipient's Name:</label>
+        <input type="text" id="recipientName" name="recipientName" required>
+
+        <!-- Other form fields -->
+
+        <button type="submit">Place Order</button>
+    </form>
+
+    <script>
+        // Using JavaScript to handle form submission and redirection
+        document.getElementById('flowerForm').addEventListener('submit', function (event) {
+            event.preventDefault(); // Prevents the form from submitting the traditional way
+
+            // You can perform any additional actions here before submitting the form
+            // For example, you might want to validate the form data using JavaScript
+
+            // Submit the form
+            this.submit();
+
+            // Redirect to the next page after a brief delay (e.g., 2 seconds)
+            setTimeout(function () {
+                window.location.href = 'confirmation_page.html';
+            }, 2000);
+        });
+    </script>
+</body>
+</html>

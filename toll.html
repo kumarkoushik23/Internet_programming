@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Login</title>
+  <style>
+    /* Add your styling here */
+  </style>
+</head>
+<body>
+  <h2>Admin Login</h2>
+  <form onsubmit="adminLogin(); return false;">
+    <label for="adminUsername">Username:</label>
+    <input type="text" id="adminUsername" required>
+
+    <label for="adminPassword">Password:</label>
+    <input type="password" id="adminPassword" required>
+
+    <button type="submit">Login</button>
+  </form>
+
+  <script>
+    function adminLogin() {
+      var username = document.getElementById("adminUsername").value;
+      var password = document.getElementById("adminPassword").value;
+
+      // Perform server-side validation and authentication here
+      // For simplicity, let's assume a hardcoded admin username and password
+      var validAdminUsername = "admin";
+      var validAdminPassword = "admin123";
+
+      if (username === validAdminUsername && password === validAdminPassword) {
+        // Redirect to the admin dashboard
+        window.location.href = "admin-dashboard.html";
+      } else {
+        alert("Invalid username or password. Please try again.");
+      }
+    }
+  </script>
+</body>
+</html>
